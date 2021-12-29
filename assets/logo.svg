@@ -9,7 +9,7 @@
    viewBox="0 0 338.66666 169.33334"
    height="640"
    width="1280"
-   inkscape:export-filename="logo.png"
+   inkscape:export-filename="/home/madhead/Projects/2D/dynamik.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -28,7 +28,7 @@
      showgrid="false"
      units="px"
      width="1280px"
-     showguides="true"
+     showguides="false"
      inkscape:guide-bbox="true"
      fit-margin-top="20"
      inkscape:snap-bbox="true"
@@ -45,8 +45,8 @@
      inkscape:snap-text-baseline="true"
      inkscape:snap-page="false"
      inkscape:zoom="0.70710678"
-     inkscape:cx="533.15851"
-     inkscape:cy="373.35238"
+     inkscape:cx="545.88644"
+     inkscape:cy="404.46508"
      inkscape:window-width="1920"
      inkscape:window-height="999"
      inkscape:window-x="0"
@@ -786,6 +786,733 @@
            id="feMergeNode212374" />
       </feMerge>
     </filter>
+    <filter
+       x="-0.0073616106"
+       y="-0.014723221"
+       width="1.0147232"
+       height="1.0386485"
+       id="filter1243">
+      <feOffset
+         in="SourceAlpha"
+         result="offA"
+         dy="2"
+         id="feOffset1207" />
+      <feOffset
+         in="SourceAlpha"
+         result="offB"
+         dy="1"
+         id="feOffset1209" />
+      <feOffset
+         in="SourceAlpha"
+         result="offC"
+         dy="3"
+         id="feOffset1211" />
+      <feMorphology
+         in="offC"
+         result="spreadC"
+         operator="erode"
+         radius="2"
+         id="feMorphology1213" />
+      <feGaussianBlur
+         in="offA"
+         result="blurA"
+         stdDeviation="1"
+         id="feGaussianBlur1215" />
+      <comment />
+      <feGaussianBlur
+         in="offB"
+         result="blurB"
+         stdDeviation="2.5"
+         id="feGaussianBlur1217" />
+      <comment />
+      <feGaussianBlur
+         in="spreadC"
+         result="blurC"
+         stdDeviation="0.5"
+         id="feGaussianBlur1219" />
+      <comment />
+      <feFlood
+         flood-opacity="0.14"
+         result="opA"
+         id="feFlood1221" />
+      <feFlood
+         flood-opacity="0.12"
+         result="opB"
+         id="feFlood1223" />
+      <feFlood
+         flood-opacity="0.20"
+         result="opC"
+         id="feFlood1225" />
+      <feComposite
+         in="opA"
+         in2="blurA"
+         result="shA"
+         operator="in"
+         id="feComposite1227" />
+      <feComposite
+         in="opB"
+         in2="blurB"
+         result="shB"
+         operator="in"
+         id="feComposite1229" />
+      <feComposite
+         in="opC"
+         in2="blurC"
+         result="shC"
+         operator="in"
+         id="feComposite1231" />
+      <feMerge
+         id="feMerge1241">
+        <feMergeNode
+           in="shA"
+           id="feMergeNode1233" />
+        <feMergeNode
+           in="shB"
+           id="feMergeNode1235" />
+        <feMergeNode
+           in="shC"
+           id="feMergeNode1237" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode1239" />
+      </feMerge>
+    </filter>
+    <filter
+       x="-0.01380302"
+       y="-0.027606039"
+       width="1.027606"
+       height="1.0659478"
+       id="filter1397">
+      <feOffset
+         in="SourceAlpha"
+         result="offA"
+         dy="3"
+         id="feOffset1361" />
+      <feOffset
+         in="SourceAlpha"
+         result="offB"
+         dy="1"
+         id="feOffset1363" />
+      <feOffset
+         in="SourceAlpha"
+         result="offC"
+         dy="3"
+         id="feOffset1365" />
+      <feMorphology
+         in="offC"
+         result="spreadC"
+         operator="erode"
+         radius="2"
+         id="feMorphology1367" />
+      <feGaussianBlur
+         in="offA"
+         result="blurA"
+         stdDeviation="2"
+         id="feGaussianBlur1369" />
+      <comment />
+      <feGaussianBlur
+         in="offB"
+         result="blurB"
+         stdDeviation="4"
+         id="feGaussianBlur1371" />
+      <comment />
+      <feGaussianBlur
+         in="spreadC"
+         result="blurC"
+         stdDeviation="1.5"
+         id="feGaussianBlur1373" />
+      <comment />
+      <feFlood
+         flood-opacity="0.14"
+         result="opA"
+         id="feFlood1375" />
+      <feFlood
+         flood-opacity="0.12"
+         result="opB"
+         id="feFlood1377" />
+      <feFlood
+         flood-opacity="0.40"
+         result="opC"
+         id="feFlood1379" />
+      <feComposite
+         in="opA"
+         in2="blurA"
+         result="shA"
+         operator="in"
+         id="feComposite1381" />
+      <feComposite
+         in="opB"
+         in2="blurB"
+         result="shB"
+         operator="in"
+         id="feComposite1383" />
+      <feComposite
+         in="opC"
+         in2="blurC"
+         result="shC"
+         operator="in"
+         id="feComposite1385" />
+      <feMerge
+         id="feMerge1395">
+        <feMergeNode
+           in="shA"
+           id="feMergeNode1387" />
+        <feMergeNode
+           in="shB"
+           id="feMergeNode1389" />
+        <feMergeNode
+           in="shC"
+           id="feMergeNode1391" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode1393" />
+      </feMerge>
+    </filter>
+    <filter
+       x="-0.0086361878"
+       y="-0.016315421"
+       width="1.0172724"
+       height="1.042828"
+       id="filter1453">
+      <feOffset
+         in="SourceAlpha"
+         result="offA"
+         dy="2"
+         id="feOffset1417" />
+      <feOffset
+         in="SourceAlpha"
+         result="offB"
+         dy="1"
+         id="feOffset1419" />
+      <feOffset
+         in="SourceAlpha"
+         result="offC"
+         dy="3"
+         id="feOffset1421" />
+      <feMorphology
+         in="offC"
+         result="spreadC"
+         operator="erode"
+         radius="2"
+         id="feMorphology1423" />
+      <feGaussianBlur
+         in="offA"
+         result="blurA"
+         stdDeviation="1"
+         id="feGaussianBlur1425" />
+      <comment />
+      <feGaussianBlur
+         in="offB"
+         result="blurB"
+         stdDeviation="2.5"
+         id="feGaussianBlur1427" />
+      <comment />
+      <feGaussianBlur
+         in="spreadC"
+         result="blurC"
+         stdDeviation="0.5"
+         id="feGaussianBlur1429" />
+      <comment />
+      <feFlood
+         flood-opacity="0.14"
+         result="opA"
+         id="feFlood1431" />
+      <feFlood
+         flood-opacity="0.12"
+         result="opB"
+         id="feFlood1433" />
+      <feFlood
+         flood-opacity="0.20"
+         result="opC"
+         id="feFlood1435" />
+      <feComposite
+         in="opA"
+         in2="blurA"
+         result="shA"
+         operator="in"
+         id="feComposite1437" />
+      <feComposite
+         in="opB"
+         in2="blurB"
+         result="shB"
+         operator="in"
+         id="feComposite1439" />
+      <feComposite
+         in="opC"
+         in2="blurC"
+         result="shC"
+         operator="in"
+         id="feComposite1441" />
+      <feMerge
+         id="feMerge1451">
+        <feMergeNode
+           in="shA"
+           id="feMergeNode1443" />
+        <feMergeNode
+           in="shB"
+           id="feMergeNode1445" />
+        <feMergeNode
+           in="shC"
+           id="feMergeNode1447" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode1449" />
+      </feMerge>
+    </filter>
+    <filter
+       x="-0.009988153"
+       y="-0.017822062"
+       width="1.0199763"
+       height="1.0467829"
+       id="filter1509">
+      <feOffset
+         in="SourceAlpha"
+         result="offA"
+         dy="2"
+         id="feOffset1473" />
+      <feOffset
+         in="SourceAlpha"
+         result="offB"
+         dy="1"
+         id="feOffset1475" />
+      <feOffset
+         in="SourceAlpha"
+         result="offC"
+         dy="3"
+         id="feOffset1477" />
+      <feMorphology
+         in="offC"
+         result="spreadC"
+         operator="erode"
+         radius="2"
+         id="feMorphology1479" />
+      <feGaussianBlur
+         in="offA"
+         result="blurA"
+         stdDeviation="1"
+         id="feGaussianBlur1481" />
+      <comment />
+      <feGaussianBlur
+         in="offB"
+         result="blurB"
+         stdDeviation="2.5"
+         id="feGaussianBlur1483" />
+      <comment />
+      <feGaussianBlur
+         in="spreadC"
+         result="blurC"
+         stdDeviation="0.5"
+         id="feGaussianBlur1485" />
+      <comment />
+      <feFlood
+         flood-opacity="0.14"
+         result="opA"
+         id="feFlood1487" />
+      <feFlood
+         flood-opacity="0.12"
+         result="opB"
+         id="feFlood1489" />
+      <feFlood
+         flood-opacity="0.20"
+         result="opC"
+         id="feFlood1491" />
+      <feComposite
+         in="opA"
+         in2="blurA"
+         result="shA"
+         operator="in"
+         id="feComposite1493" />
+      <feComposite
+         in="opB"
+         in2="blurB"
+         result="shB"
+         operator="in"
+         id="feComposite1495" />
+      <feComposite
+         in="opC"
+         in2="blurC"
+         result="shC"
+         operator="in"
+         id="feComposite1497" />
+      <feMerge
+         id="feMerge1507">
+        <feMergeNode
+           in="shA"
+           id="feMergeNode1499" />
+        <feMergeNode
+           in="shB"
+           id="feMergeNode1501" />
+        <feMergeNode
+           in="shC"
+           id="feMergeNode1503" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode1505" />
+      </feMerge>
+    </filter>
+    <filter
+       x="-0.0072878238"
+       y="-0.012168264"
+       width="1.0145756"
+       height="1.0324487"
+       id="filter1565">
+      <feOffset
+         in="SourceAlpha"
+         result="offA"
+         dy="1"
+         id="feOffset1529" />
+      <feOffset
+         in="SourceAlpha"
+         result="offB"
+         dy="1"
+         id="feOffset1531" />
+      <feOffset
+         in="SourceAlpha"
+         result="offC"
+         dy="2"
+         id="feOffset1533" />
+      <feMorphology
+         in="offC"
+         result="spreadC"
+         operator="erode"
+         radius="1"
+         id="feMorphology1535" />
+      <feGaussianBlur
+         in="offA"
+         result="blurA"
+         stdDeviation="1.5"
+         id="feGaussianBlur1537" />
+      <comment />
+      <feGaussianBlur
+         in="offB"
+         result="blurB"
+         stdDeviation="0.5"
+         id="feGaussianBlur1539" />
+      <comment />
+      <feGaussianBlur
+         in="spreadC"
+         result="blurC"
+         stdDeviation="0.5"
+         id="feGaussianBlur1541" />
+      <comment />
+      <feFlood
+         flood-opacity="0.2"
+         result="opA"
+         id="feFlood1543" />
+      <feFlood
+         flood-opacity="0.14"
+         result="opB"
+         id="feFlood1545" />
+      <feFlood
+         flood-opacity="0.12"
+         result="opC"
+         id="feFlood1547" />
+      <feComposite
+         in="opA"
+         in2="blurA"
+         result="shA"
+         operator="in"
+         id="feComposite1549" />
+      <feComposite
+         in="opB"
+         in2="blurB"
+         result="shB"
+         operator="in"
+         id="feComposite1551" />
+      <feComposite
+         in="opC"
+         in2="blurC"
+         result="shC"
+         operator="in"
+         id="feComposite1553" />
+      <feMerge
+         id="feMerge1563">
+        <feMergeNode
+           in="shA"
+           id="feMergeNode1555" />
+        <feMergeNode
+           in="shB"
+           id="feMergeNode1557" />
+        <feMergeNode
+           in="shC"
+           id="feMergeNode1559" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode1561" />
+      </feMerge>
+    </filter>
+    <filter
+       x="-0.008657472"
+       y="-0.013332639"
+       width="1.0173149"
+       height="1.0355537"
+       id="filter1621">
+      <feOffset
+         in="SourceAlpha"
+         result="offA"
+         dy="1"
+         id="feOffset1585" />
+      <feOffset
+         in="SourceAlpha"
+         result="offB"
+         dy="1"
+         id="feOffset1587" />
+      <feOffset
+         in="SourceAlpha"
+         result="offC"
+         dy="2"
+         id="feOffset1589" />
+      <feMorphology
+         in="offC"
+         result="spreadC"
+         operator="erode"
+         radius="1"
+         id="feMorphology1591" />
+      <feGaussianBlur
+         in="offA"
+         result="blurA"
+         stdDeviation="1.5"
+         id="feGaussianBlur1593" />
+      <comment />
+      <feGaussianBlur
+         in="offB"
+         result="blurB"
+         stdDeviation="0.5"
+         id="feGaussianBlur1595" />
+      <comment />
+      <feGaussianBlur
+         in="spreadC"
+         result="blurC"
+         stdDeviation="0.5"
+         id="feGaussianBlur1597" />
+      <comment />
+      <feFlood
+         flood-opacity="0.2"
+         result="opA"
+         id="feFlood1599" />
+      <feFlood
+         flood-opacity="0.14"
+         result="opB"
+         id="feFlood1601" />
+      <feFlood
+         flood-opacity="0.12"
+         result="opC"
+         id="feFlood1603" />
+      <feComposite
+         in="opA"
+         in2="blurA"
+         result="shA"
+         operator="in"
+         id="feComposite1605" />
+      <feComposite
+         in="opB"
+         in2="blurB"
+         result="shB"
+         operator="in"
+         id="feComposite1607" />
+      <feComposite
+         in="opC"
+         in2="blurC"
+         result="shC"
+         operator="in"
+         id="feComposite1609" />
+      <feMerge
+         id="feMerge1619">
+        <feMergeNode
+           in="shA"
+           id="feMergeNode1611" />
+        <feMergeNode
+           in="shB"
+           id="feMergeNode1613" />
+        <feMergeNode
+           in="shC"
+           id="feMergeNode1615" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode1617" />
+      </feMerge>
+    </filter>
+    <filter
+       x="-0.021120297"
+       y="-0.02935836"
+       width="1.0422406"
+       height="1.078289"
+       id="filter1677">
+      <feOffset
+         in="SourceAlpha"
+         result="offA"
+         dy="1"
+         id="feOffset1641" />
+      <feOffset
+         in="SourceAlpha"
+         result="offB"
+         dy="1"
+         id="feOffset1643" />
+      <feOffset
+         in="SourceAlpha"
+         result="offC"
+         dy="2"
+         id="feOffset1645" />
+      <feMorphology
+         in="offC"
+         result="spreadC"
+         operator="erode"
+         radius="1"
+         id="feMorphology1647" />
+      <feGaussianBlur
+         in="offA"
+         result="blurA"
+         stdDeviation="1.5"
+         id="feGaussianBlur1649" />
+      <comment />
+      <feGaussianBlur
+         in="offB"
+         result="blurB"
+         stdDeviation="0.5"
+         id="feGaussianBlur1651" />
+      <comment />
+      <feGaussianBlur
+         in="spreadC"
+         result="blurC"
+         stdDeviation="0.5"
+         id="feGaussianBlur1653" />
+      <comment />
+      <feFlood
+         flood-opacity="0.2"
+         result="opA"
+         id="feFlood1655" />
+      <feFlood
+         flood-opacity="0.14"
+         result="opB"
+         id="feFlood1657" />
+      <feFlood
+         flood-opacity="0.12"
+         result="opC"
+         id="feFlood1659" />
+      <feComposite
+         in="opA"
+         in2="blurA"
+         result="shA"
+         operator="in"
+         id="feComposite1661" />
+      <feComposite
+         in="opB"
+         in2="blurB"
+         result="shB"
+         operator="in"
+         id="feComposite1663" />
+      <feComposite
+         in="opC"
+         in2="blurC"
+         result="shC"
+         operator="in"
+         id="feComposite1665" />
+      <feMerge
+         id="feMerge1675"
+         result="fbSourceGraphic">
+        <feMergeNode
+           in="shA"
+           id="feMergeNode1667" />
+        <feMergeNode
+           in="shB"
+           id="feMergeNode1669" />
+        <feMergeNode
+           in="shC"
+           id="feMergeNode1671" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode1673" />
+      </feMerge>
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1697" />
+      <feOffset
+         id="feOffset1699"
+         in="fbSourceGraphicAlpha"
+         result="offA"
+         dy="1" />
+      <feOffset
+         id="feOffset1701"
+         in="fbSourceGraphicAlpha"
+         result="offB"
+         dy="1" />
+      <feOffset
+         id="feOffset1703"
+         in="fbSourceGraphicAlpha"
+         result="offC"
+         dy="2" />
+      <feMorphology
+         id="feMorphology1705"
+         in="offC"
+         result="spreadC"
+         operator="erode"
+         radius="1" />
+      <feGaussianBlur
+         id="feGaussianBlur1707"
+         in="offA"
+         result="blurA"
+         stdDeviation="1.5" />
+      <comment />
+      <feGaussianBlur
+         id="feGaussianBlur1709"
+         in="offB"
+         result="blurB"
+         stdDeviation="0.5" />
+      <comment />
+      <feGaussianBlur
+         id="feGaussianBlur1711"
+         in="spreadC"
+         result="blurC"
+         stdDeviation="0.5" />
+      <comment />
+      <feFlood
+         id="feFlood1713"
+         flood-opacity="0.2"
+         result="opA" />
+      <feFlood
+         id="feFlood1715"
+         flood-opacity="0.14"
+         result="opB" />
+      <feFlood
+         id="feFlood1717"
+         flood-opacity="0.12"
+         result="opC" />
+      <feComposite
+         in2="blurA"
+         id="feComposite1719"
+         in="opA"
+         result="shA"
+         operator="in" />
+      <feComposite
+         in2="blurB"
+         id="feComposite1721"
+         in="opB"
+         result="shB"
+         operator="in" />
+      <feComposite
+         in2="blurC"
+         id="feComposite1723"
+         in="opC"
+         result="shC"
+         operator="in" />
+      <feMerge
+         id="feMerge1725">
+        <feMergeNode
+           id="feMergeNode1727"
+           in="shA" />
+        <feMergeNode
+           id="feMergeNode1729"
+           in="shB" />
+        <feMergeNode
+           id="feMergeNode1731"
+           in="shC" />
+        <feMergeNode
+           id="feMergeNode1733"
+           in="fbSourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
   <g
      inkscape:groupmode="layer"
@@ -793,29 +1520,34 @@
      inkscape:label="waves"
      style="display:inline">
     <path
-       style="display:inline;fill:#a430ef;fill-opacity:1;stroke:none;stroke-width:3.22048px;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter212378);stop-color:#000000"
-       d="M 30.2151,6.82593 H 308.452 c 4.397,0 7.937,3.54017 7.937,7.93747 V 154.57 c 0,4.397 -3.54,7.937 -7.937,7.937 H 30.2151 c -4.3974,0 -7.9375,-3.54 -7.9375,-7.937 V 14.7634 c 0,-4.3973 3.5401,-7.93747 7.9375,-7.93747 z"
-       id="path5029" />
-    <path
-       style="display:inline;fill:#b81ee7;fill-opacity:1;stroke:none;stroke-width:2.85463px;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter212322);stop-color:#000000"
-       d="M 50.1202,13.4067 H 288.546 c 4.398,0 7.938,3.5401 7.938,7.9375 V 147.989 c 0,4.398 -3.54,7.938 -7.938,7.938 H 50.1202 c -4.3973,0 -7.9375,-3.54 -7.9375,-7.938 V 21.3442 c 0,-4.3974 3.5402,-7.9375 7.9375,-7.9375 z"
-       id="path5031" />
-    <path
-       style="display:inline;fill:#c914d8;fill-opacity:1;stroke:none;stroke-width:2.51944px;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter212266);stop-color:#000000"
-       d="M 68.3565,19.4357 H 270.31 c 4.398,0 7.938,3.5401 7.938,7.9375 V 141.96 c 0,4.398 -3.54,7.938 -7.938,7.938 H 68.3565 c -4.3974,0 -7.9375,-3.54 -7.9375,-7.938 V 27.3732 c 0,-4.3974 3.5401,-7.9375 7.9375,-7.9375 z"
-       id="path5033" />
-    <path
-       style="display:inline;fill:#d124b1;fill-opacity:1;stroke:none;stroke-width:2.20275px;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter212210);stop-color:#000000"
-       d="M 85.5871,25.1322 H 253.08 c 4.397,0 7.937,3.5402 7.937,7.9375 V 136.264 c 0,4.397 -3.54,7.937 -7.937,7.937 H 85.5871 c -4.3974,0 -7.9375,-3.54 -7.9375,-7.937 V 33.0697 c 0,-4.3973 3.5401,-7.9375 7.9375,-7.9375 z"
-       id="path5035" />
-    <path
-       style="display:inline;fill:#d9338c;fill-opacity:1;stroke:none;stroke-width:1.89912px;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter212042);stop-color:#000000"
-       d="M 102.107,30.5937 H 236.56 c 4.398,0 7.938,3.5401 7.938,7.9375 v 92.2708 c 0,4.398 -3.54,7.938 -7.938,7.938 H 102.107 c -4.3979,0 -7.938,-3.54 -7.938,-7.938 V 38.5312 c 0,-4.3974 3.5401,-7.9375 7.938,-7.9375 z"
-       id="path5037" />
-    <path
-       style="display:inline;fill:#e44857;fill-opacity:1;stroke:none;stroke-width:1.60552px;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter211986);stop-color:#000000"
+       style="display:inline;fill:#e44857;fill-opacity:1;stroke:none;stroke-width:1.60552px;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
        d="m 118.08,35.8747 h 102.506 c 4.398,0 7.938,3.5402 7.938,7.9375 v 81.7088 c 0,4.397 -3.54,7.938 -7.938,7.938 H 118.08 c -4.397,0 -7.937,-3.541 -7.937,-7.938 V 43.8122 c 0,-4.3973 3.54,-7.9375 7.937,-7.9375 z"
        id="path5039" />
+    <path
+       id="path5037"
+       style="display:inline;fill:#d9338c;fill-opacity:1;stroke:none;stroke-width:7.17778px;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000;filter:url(#filter1677)"
+       d="M 385.91602 115.62891 C 369.29403 115.62891 355.91406 129.00881 355.91406 145.62891 L 355.91406 494.36914 C 355.91406 510.9915 369.29403 524.37109 385.91602 524.37109 L 894.08594 524.37109 C 910.7083 524.37109 924.08789 510.9915 924.08789 494.36914 L 924.08789 145.62891 C 924.08789 129.00881 910.7083 115.62891 894.08594 115.62891 L 385.91602 115.62891 z M 446.28711 135.58984 L 833.71094 135.58984 C 850.3333 135.58984 863.71289 148.97013 863.71289 165.58984 L 863.71289 474.41016 C 863.71289 491.02874 850.3333 504.41211 833.71094 504.41211 L 446.28711 504.41211 C 429.66853 504.41211 416.28906 491.02874 416.28906 474.41016 L 416.28906 165.58984 C 416.28906 148.97013 429.66853 135.58984 446.28711 135.58984 z "
+       transform="scale(0.26458333)" />
+    <path
+       id="path5035"
+       style="display:inline;fill:#d124b1;fill-opacity:1;stroke:none;stroke-width:8.32535px;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000;filter:url(#filter1621)"
+       d="M 323.47852 94.988281 C 306.85842 94.988281 293.47852 108.36856 293.47852 124.98828 L 293.47852 515.01367 C 293.47852 531.63225 306.85842 545.01172 323.47852 545.01172 L 956.52344 545.01172 C 973.14202 545.01172 986.52148 531.63225 986.52148 515.01367 L 986.52148 124.98828 C 986.52148 108.36856 973.14202 94.988281 956.52344 94.988281 L 323.47852 94.988281 z M 385.91602 115.62891 L 894.08594 115.62891 C 910.7083 115.62891 924.08789 129.00881 924.08789 145.62891 L 924.08789 494.36914 C 924.08789 510.9915 910.7083 524.37109 894.08594 524.37109 L 385.91602 524.37109 C 369.29403 524.37109 355.91406 510.9915 355.91406 494.36914 L 355.91406 145.62891 C 355.91406 129.00881 369.29403 115.62891 385.91602 115.62891 z "
+       transform="scale(0.26458333)" />
+    <path
+       id="path5033"
+       style="display:inline;fill:#c914d8;fill-opacity:1;stroke:none;stroke-width:9.52229px;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000;filter:url(#filter1565)"
+       d="M 258.35547 73.457031 C 241.73537 73.457031 228.35547 86.836937 228.35547 103.45703 L 228.35547 536.54102 C 228.35547 553.16338 241.73537 566.54297 258.35547 566.54297 L 1021.6445 566.54297 C 1038.2669 566.54297 1051.6465 553.16338 1051.6465 536.54102 L 1051.6465 103.45703 C 1051.6465 86.836937 1038.2669 73.457031 1021.6445 73.457031 L 258.35547 73.457031 z M 323.47852 94.988281 L 956.52344 94.988281 C 973.14202 94.988281 986.52148 108.36856 986.52148 124.98828 L 986.52148 515.01367 C 986.52148 531.63225 973.14202 545.01172 956.52344 545.01172 L 323.47852 545.01172 C 306.85842 545.01172 293.47852 531.63225 293.47852 515.01367 L 293.47852 124.98828 C 293.47852 108.36856 306.85842 94.988281 323.47852 94.988281 z "
+       transform="scale(0.26458333)" />
+    <path
+       id="path5031"
+       style="display:inline;fill:#b81ee7;fill-opacity:1;stroke:none;stroke-width:10.7892px;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000;filter:url(#filter1509)"
+       d="M 189.43164 50.671875 C 172.81192 50.671875 159.43164 64.051781 159.43164 80.671875 L 159.43164 559.32812 C 159.43164 575.95049 172.81192 589.33008 189.43164 589.33008 L 1090.5684 589.33008 C 1107.1907 589.33008 1120.5703 575.95049 1120.5703 559.32812 L 1120.5703 80.671875 C 1120.5703 64.051781 1107.1907 50.671875 1090.5684 50.671875 L 189.43164 50.671875 z M 258.35547 73.457031 L 1021.6445 73.457031 C 1038.2669 73.457031 1051.6465 86.836937 1051.6465 103.45703 L 1051.6465 536.54102 C 1051.6465 553.16338 1038.2669 566.54297 1021.6445 566.54297 L 258.35547 566.54297 C 241.73537 566.54297 228.35547 553.16338 228.35547 536.54102 L 228.35547 103.45703 C 228.35547 86.836937 241.73537 73.457031 258.35547 73.457031 z "
+       transform="scale(0.26458333)" />
+    <path
+       id="path5029"
+       style="display:inline;fill:#a430ef;fill-opacity:1;stroke:none;stroke-width:12.1719px;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000;filter:url(#filter1453)"
+       d="M 114.19922 25.798828 C 97.579124 25.798828 84.199219 39.179112 84.199219 55.798828 L 84.199219 584.20117 C 84.199219 600.81975 97.579124 614.19922 114.19922 614.19922 L 1165.8027 614.19922 C 1182.4213 614.19922 1195.8008 600.81975 1195.8008 584.20117 L 1195.8008 55.798828 C 1195.8008 39.179112 1182.4213 25.798828 1165.8027 25.798828 L 114.19922 25.798828 z M 189.43164 50.671875 L 1090.5684 50.671875 C 1107.1907 50.671875 1120.5703 64.051781 1120.5703 80.671875 L 1120.5703 559.32812 C 1120.5703 575.95049 1107.1907 589.33008 1090.5684 589.33008 L 189.43164 589.33008 C 172.81192 589.33008 159.43164 575.95049 159.43164 559.32812 L 159.43164 80.671875 C 159.43164 64.051781 172.81192 50.671875 189.43164 50.671875 z "
+       transform="scale(0.26458333)" />
     <rect
        style="fill:#c51cd3;fill-opacity:0.0509804;stroke:none;stroke-width:1;paint-order:stroke fill markers;stop-color:#000000"
        id="rect76833"
