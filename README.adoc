@@ -11,3 +11,22 @@ image::./assets/logo.svg[align="center"]
 endif::[]
 
 # Dynamik
+
+This just doesn't work:
+```kotlin
+@DynamoDbBean
+data class Location(
+    val latitude: Double,
+    val longitude: Double,
+)
+```
+
+This works:
+```kotlin
+@Serializable
+@DynamoDbBean
+data class Location(
+    var latitude: Double = 0.0,
+    var longitude: Double = 0.0,
+)
+```
