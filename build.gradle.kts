@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     `java-library`
     alias(libs.plugins.kotlin.jvm)
@@ -19,6 +21,8 @@ dependencies {
     testImplementation(libs.junit.jupiter.api)
     testImplementation(libs.junit.jupiter.params)
     testImplementation(libs.dynamodb.enhanced)
+    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-properties")
 
     testRuntimeOnly(platform(libs.junit.bom))
     testRuntimeOnly(libs.junit.jupiter.engine)
@@ -32,6 +36,11 @@ jmh {
 }
 
 tasks {
+    withType<KotlinCompile> {
+        kotlinOptions {
+            freeCompilerArgs += "-opt-in=kotlinx.serialization.ExperimentalSerializationApi"
+        }
+    }
     test {
         useJUnitPlatform()
         testLogging {

@@ -1,0 +1,106 @@
+== Dependency Metadata
+
+// TODO
+
+Artifacts are deployed to https://search.maven.org[Maven Central Repository].
+
+* *Group ID*: `me.madhead.dynamik`
+* *Version*: `{revnumber}`
+* *Artifacts*:
+** `dynamik`
+
+=== Gradle
+
+[source,kotlin,subs=attributes+]
+----
+repositories {
+    // Add Maven Central Repository if you don't use it already
+    mavenCentral()
+}
+
+dependencies {
+    // Choose the dependencies you need
+    testImplementation("me.madhead.aws-junit5:dynamo-v1:{revnumber}")
+}
+----
+
+=== Maven
+
+Specify the dependencies you need as usual:
+
+.pom.xml
+[source,xml,subs=attributes+]
+----
+<dependencies>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>dynamo-v1</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>dynamo-v2</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>s3-v1</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>s3-v2</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>kinesis-v1</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>kinesis-v2</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>sns-v1</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>sns-v2</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>sqs-v1</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>sqs-v2</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>ses-v1</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>ses-v2</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>lambda-v1</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+    <dependency>
+        <groupId>me.madhead.aws-junit5</groupId>
+        <artifactId>lambda-v2</artifactId>
+        <version>{revnumber}</version>
+    </dependency>
+</dependencies>
+----

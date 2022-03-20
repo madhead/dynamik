@@ -1,62 +1,72 @@
 package me.madhead.dynamik
 
 import kotlinx.serialization.DeserializationStrategy
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.SerialFormat
+import kotlinx.serialization.SerializationException
 import kotlinx.serialization.SerializationStrategy
+import kotlinx.serialization.modules.EmptySerializersModule
 import kotlinx.serialization.modules.SerializersModule
+import kotlinx.serialization.serializer
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue
 
-public sealed class Dynamik(
-    override val serializersModule: SerializersModule,
+sealed class Dynamik(
+    val configuration: DynamikConfiguration,
+    override val serializersModule: SerializersModule
 ) : SerialFormat {
-    public fun <T> encode(serializer: SerializationStrategy<T>, value: T): Map<String, AttributeValue> {
-        TODO()
+    companion object Default : Dynamik(DynamikConfiguration(), EmptySerializersModule)
+
+    /**
+     * Serializes the given [value] into an equivalent [Map]<[String], [AttributeValue]> using the given [serializer].
+     *
+     * @throws [SerializationException] if the given value cannot be serialized.
+     */
+    fun <T> encode(serializer: SerializationStrategy<T>, value: T): Map<String, AttributeValue> {
+        return encode(value, serializer)
     }
 
-    public fun <T> decode(deserializer: DeserializationStrategy<T>, item: Map<String, AttributeValue>): T {
-        TODO()
+    /**
+     * Serializes the given [value] into an equivalent [Map]<[String], [AttributeValue]> using a serializer, retrieved from the [serializersModule].
+     *
+     * @throws [SerializationException] if the given value cannot be serialized.
+     */
+    inline fun <reified T> encode(value: T): Map<String, AttributeValue> {
+        return encode(serializersModule.serializer(), value)
+    }
+
+    /**
+     * Deserializes the given [item] into a value of type [T] using the given [deserializer].
+     *
+     * @throws [SerializationException] if the given item cannot be deserialized to the value of type [T].
+     */
+    fun <T> decode(deserializer: DeserializationStrategy<T>, item: Map<String, AttributeValue>): T {
+        return decode(item, deserializer)
+    }
+
+    /**
+     * Deserializes the given [item] into a value of type [T] using a serializer, retrieved from the [serializersModule].
+     *
+     * @throws [SerializationException] if the given item cannot be deserialized to the value of type [T].
+     */
+    inline fun <reified T> decode(item: Map<String, AttributeValue>): T {
+        return decode(serializersModule.serializer(), item)
     }
 }
 
-// private class DynamikImpl(serializersModule: SerializersModule) : Dynamik(serializersModule)
-//
-// public fun Dynamik(module: SerializersModule): Dynamik = DynamikImpl(module)
+fun Dynamik(
+    from: Dynamik = Dynamik.Default,
+    builderAction: DynamikBuilder.() -> Unit
+): Dynamik {
+    val builder = DynamikBuilder(from)
 
-// /**
-//  * Encodes properties from given [value] to a map using serializer for reified type [T] and returns this map.
-//  * `null` values are omitted from the output.
-//  */
-// @ExperimentalSerializationApi
-// public inline fun <reified T> Properties.encodeToMap(value: T): Map<String, Any> =
-//     encodeToMap(serializersModule.serializer(), value)
-//
-// /**
-//  * Encodes properties from given [value] to a map using serializer for reified type [T] and returns this map.
-//  * Converts all primitive types to [String] using [toString] method.
-//  * `null` values are omitted from the output.
-//  */
-// @ExperimentalSerializationApi
-// public inline fun <reified T> Properties.encodeToStringMap(value: T): Map<String, String> =
-//     encodeToStringMap(serializersModule.serializer(), value)
-//
-// /**
-//  * Decodes properties from given [map], assigns them to an object using serializer for reified type [T] and returns this object.
-//  * [T] may contain properties of nullable types; they will be filled by non-null values from the [map], if present.
-//  */
-// @ExperimentalSerializationApi
-// public inline fun <reified T> Properties.decodeFromMap(map: Map<String, Any>): T =
-//     decodeFromMap(serializersModule.serializer(), map)
-//
-// /**
-//  * Decodes properties from given [map], assigns them to an object using serializer for reified type [T] and returns this object.
-//  * [String] values are converted to respective primitive types using default conversion methods.
-//  * [T] may contain properties of nullable types; they will be filled by non-null values from the [map], if present.
-//  */
-// @ExperimentalSerializationApi
-// public inline fun <reified T> Properties.decodeFromStringMap(map: Map<String, String>): T =
-//     decodeFromStringMap(serializersModule.serializer(), map)
-//
-// // Migrations below
-//
-// @PublishedApi
-// internal fun noImpl(): Nothing = throw UnsupportedOperationException("Not implemented, should not be called")
+    builder.builderAction()
+
+    val configuration = builder.build()
+
+    return DynamikImpl(configuration, builder.serializersModule)
+}
+
+private class DynamikImpl(
+    configuration: DynamikConfiguration,
+    serializersModule: SerializersModule
+) : Dynamik(configuration, serializersModule)
