@@ -1,0 +1,9 @@
+== General information
+
+Dynamik is a https://github.com/Kotlin/kotlinx.serialization[Kotlin Serialization] https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/formats.md[format] converting https://kotlin.github.io/kotlinx.serialization/kotlinx-serialization-core/kotlinx.serialization/-serializable/index.html[`@Serializable`] classes into https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html[DynamoDB items] (i.e. `Map<String, https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/dynamodb/model/AttributeValue.html[AttributeValue]>`).
+
+The goal of the project is to provide APIs functionally similar to the https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/enhanced/dynamodb/TableSchema.html#itemToMap-T-boolean-[`itemToMap`] and https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/enhanced/dynamodb/TableSchema.html#mapToItem-java.util.Map-[`mapToItem`] methods from the https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/enhanced/dynamodb/TableSchema.html[`TableSchema`] class of the https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/examples-dynamodb-enhanced.html[Amazon DynamoDB enhanced client] with the benefits of:
+
+- Data classes support
+- Being more "Kotlinish" in general
+- Being more performant

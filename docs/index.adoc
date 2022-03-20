@@ -1,0 +1,11 @@
+= Dynamik
+:sectnums:
+:toc: left
+:toclevels: 2
+:sectanchors: true
+
+include::general.adoc[]
+
+include::maven.adoc[]
+
+include::usage.adoc[]

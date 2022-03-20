@@ -1,6 +1,7 @@
 package me.madhead.dynamik
 
-import me.madhead.dynamik.types.Customer
+import me.madhead.dynamik.types.Order
+import me.madhead.dynamik.types.random
 import org.openjdk.jmh.annotations.Benchmark
 import org.openjdk.jmh.annotations.BenchmarkMode
 import org.openjdk.jmh.annotations.Fork
@@ -12,6 +13,7 @@ import org.openjdk.jmh.annotations.Setup
 import org.openjdk.jmh.annotations.State
 import org.openjdk.jmh.annotations.Warmup
 import org.openjdk.jmh.infra.Blackhole
+import software.amazon.awssdk.enhanced.dynamodb.TableSchema
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue
 import java.time.Instant
 import java.util.concurrent.TimeUnit
@@ -21,38 +23,34 @@ import kotlin.random.Random
 @Warmup(iterations = 3)
 @State(Scope.Thread)
 open class DynamikBenchmark {
-    private lateinit var item: Customer
+    private lateinit var dynamik: Dynamik
+    private lateinit var tableSchema: TableSchema<Order>
+    private lateinit var item: Order
     private lateinit var map: Map<String, AttributeValue>
 
     @Setup
     fun setupDynamik() {
+        dynamik = Dynamik.Default
+        tableSchema = TableSchema.fromBean(Order::class.java)
     }
 
     @Setup(Level.Iteration)
     fun setupData() {
-        item = Customer(
-            id = Random.nextLong(),
-            name = List(10) { (('a'..'z') + ('A'..'Z') + ('0'..'9')).random() }.joinToString(""),
-            registrationDate = Instant.now(),
-        )
-        map = mapOf(
-            "id" to AttributeValue.builder().n(item.id.toString()).build(),
-            "name" to AttributeValue.builder().s(item.name).build(),
-            "registrationDate" to AttributeValue.builder().s(item.registrationDate.toString()).build(),
-        )
+        item = Order.random
+        map = tableSchema.itemToMap(item, false)
     }
 
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
-    fun itemToMap() {
-        TODO()
+    fun encode(blackhole: Blackhole) {
+        blackhole.consume(dynamik.encode(item))
     }
 
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
-    fun mapToItem() {
-        TODO()
+    fun decode(blackhole: Blackhole) {
+        blackhole.consume(dynamik.decode<Order>(map))
     }
 }
