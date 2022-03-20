@@ -22,6 +22,7 @@ sealed class Dynamik(
      * @throws [SerializationException] if the given value cannot be serialized.
      */
     fun <T> encode(serializer: SerializationStrategy<T>, value: T): Map<String, AttributeValue> {
+        // TODO: Check that value is not a primitive
         return encode(value, serializer)
     }
 
@@ -51,6 +52,8 @@ sealed class Dynamik(
     inline fun <reified T> decode(item: Map<String, AttributeValue>): T {
         return decode(serializersModule.serializer(), item)
     }
+
+    // TODO: Methods to serialize primitives to/from AttributeValue
 }
 
 fun Dynamik(

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema
+import software.amazon.awssdk.services.dynamodb.DynamoDbClient
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 
