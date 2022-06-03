@@ -15,9 +15,7 @@ import org.openjdk.jmh.annotations.Warmup
 import org.openjdk.jmh.infra.Blackhole
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue
-import java.time.Instant
 import java.util.concurrent.TimeUnit
-import kotlin.random.Random
 
 @Fork(3)
 @Warmup(iterations = 3)
@@ -44,13 +42,15 @@ open class DynamikBenchmark {
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     fun encode(blackhole: Blackhole) {
-        blackhole.consume(dynamik.encode(item))
+        TODO()
+        // blackhole.consume(dynamik.encode(item))
     }
 
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     fun decode(blackhole: Blackhole) {
-        blackhole.consume(dynamik.decode<Order>(map))
+        TODO()
+        // blackhole.consume(dynamik.decode<Order>(map))
     }
 }
