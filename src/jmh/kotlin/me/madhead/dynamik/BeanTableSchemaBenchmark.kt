@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit
 @Fork(3)
 @Warmup(iterations = 3)
 @State(Scope.Thread)
-open class TableSchemaBenchmark {
+open class BeanTableSchemaBenchmark {
     private lateinit var tableSchema: TableSchema<Order>
     private lateinit var item: Order
     private lateinit var map: Map<String, AttributeValue>

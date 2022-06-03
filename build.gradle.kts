@@ -38,7 +38,10 @@ jmh {
 tasks {
     withType<KotlinCompile> {
         kotlinOptions {
-            freeCompilerArgs += "-opt-in=kotlinx.serialization.ExperimentalSerializationApi"
+            freeCompilerArgs = freeCompilerArgs + listOf(
+                "-opt-in=kotlinx.serialization.ExperimentalSerializationApi",
+                "-opt-in=kotlinx.serialization.InternalSerializationApi",
+            )
         }
     }
     test {

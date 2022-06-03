@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema
-import software.amazon.awssdk.services.dynamodb.DynamoDbClient
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 
@@ -20,6 +19,74 @@ class DynamikTest {
     fun setUp() {
         tableSchema = TableSchema.fromBean(Order::class.java)
     }
+
+    // @Test
+    // fun `Null → AttributeValue`() {
+    //     assertEquals(
+    //         AttributeValue.builder().nul(true).build(),
+    //         Dynamik.nullAttributeValue()
+    //     )
+    // }
+    //
+    // @Test
+    // fun `String → AttributeValue`() {
+    //     assertEquals(
+    //         AttributeValue.builder().s("").build(),
+    //         Dynamik.encodeToAttributeValue("")
+    //     )
+    //     assertEquals(
+    //         AttributeValue.builder().s("test").build(),
+    //         Dynamik.encodeToAttributeValue("test")
+    //     )
+    // }
+    //
+    // @Test
+    // fun `Boolean → AttributeValue`() {
+    //     assertEquals(
+    //         AttributeValue.builder().bool(true).build(),
+    //         Dynamik.encodeToAttributeValue(true)
+    //     )
+    //     assertEquals(
+    //         AttributeValue.builder().bool(false).build(),
+    //         Dynamik.encodeToAttributeValue(false)
+    //     )
+    // }
+    //
+    // @Test
+    // fun `Number → AttributeValue`() {
+    //     assertEquals(
+    //         AttributeValue.builder().n("1").build(),
+    //         Dynamik.encodeToAttributeValue(1)
+    //     )
+    //     assertEquals(
+    //         AttributeValue.builder().n("0").build(),
+    //         Dynamik.encodeToAttributeValue(0)
+    //     )
+    //     assertEquals(
+    //         AttributeValue.builder().n("-1").build(),
+    //         Dynamik.encodeToAttributeValue(-1)
+    //     )
+    //     assertEquals(
+    //         AttributeValue.builder().n("4.2").build(),
+    //         Dynamik.encodeToAttributeValue(4.2F)
+    //     )
+    //     assertEquals(
+    //         AttributeValue.builder().n("4.2").build(),
+    //         Dynamik.encodeToAttributeValue(4.2)
+    //     )
+    //     assertEquals(
+    //         AttributeValue.builder().n("42").build(),
+    //         Dynamik.encodeToAttributeValue(AtomicInteger(42))
+    //     )
+    //     assertEquals(
+    //         AttributeValue.builder().n("42").build(),
+    //         Dynamik.encodeToAttributeValue(BigInteger("42"))
+    //     )
+    //     assertEquals(
+    //         AttributeValue.builder().n("4.2").build(),
+    //         Dynamik.encodeToAttributeValue(BigDecimal("4.2"))
+    //     )
+    // }
 
     @Test
     fun `serialize an Order`() {

@@ -11,4 +11,6 @@ data class DynamikConfiguration internal constructor(
     val encodeDefaults: Boolean = false,
     val ignoreUnknownKeys: Boolean = true,
     val explicitNulls: Boolean = false,
+    val useArrayPolymorphism: Boolean = false,
+    val classDiscriminator: String = "type",
 )
