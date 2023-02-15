@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="640" version="1.1" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<filter id="shadow" x="-.020511" y="-.038749" width="1.041" height="1.0894">
+			<feOffset dy="4" in="SourceAlpha" result="offA"/>
+			<feOffset dy="1" in="SourceAlpha" result="offB"/>
+			<feOffset dy="2" in="SourceAlpha" result="offC"/>
+			<feMorphology in="offC" radius="1" result="spreadC"/>
+			<feGaussianBlur in="offA" result="blurA" stdDeviation="2.5"/>
+			<feGaussianBlur in="offB" result="blurB" stdDeviation="5"/>
+			<feGaussianBlur in="spreadC" result="blurC" stdDeviation="2"/>
+			<feFlood flood-opacity=".14" result="opA"/>
+			<feFlood flood-opacity=".12" result="opB"/>
+			<feFlood flood-opacity=".4" result="opC"/>
+			<feComposite in="opA" in2="blurA" operator="in" result="shA"/>
+			<feComposite in="opB" in2="blurB" operator="in" result="shB"/>
+			<feComposite in="opC" in2="blurC" operator="in" result="shC"/>
+			<feMerge>
+				<feMergeNode in="shA"/>
+				<feMergeNode in="shB"/>
+				<feMergeNode in="shC"/>
+				<feMergeNode in="SourceGraphic"/>
+			</feMerge>
+		</filter>
+	</defs>
+	<path d="m443.82 129.78h392.35c16.833 0 30.382 13.801 30.382 30.944v318.54c0 17.142-13.549 30.946-30.382 30.946h-392.35c-16.829 0-30.378-13.804-30.378-30.946v-318.54c0-17.143 13.549-30.944 30.378-30.944z"
+	      fill="#e44857" filter="url(#shadow)"/>
+	<path d="m385.92 115.63c-16.622 0-30.002 13.38-30.002 30v348.74c0 16.622 13.38 30.002 30.002 30.002h508.17c16.622 0 30.002-13.38 30.002-30.002v-348.74c0-16.62-13.38-30-30.002-30zm60.371 19.961h387.42c16.622 0 30.002 13.38 30.002 30v308.82c0 16.619-13.38 30.002-30.002 30.002h-387.42c-16.619 0-29.998-13.383-29.998-30.002v-308.82c0-16.62 13.379-30 29.998-30z"
+	      fill="#d9338c" filter="url(#shadow)"/>
+	<path d="m323.48 94.986c-16.62 0-30 13.38-30 30v390.03c0 16.619 13.38 29.998 30 29.998h633.04c16.619 0 29.998-13.379 29.998-29.998v-390.03c0-16.62-13.379-30-29.998-30zm62.438 20.641h508.17c16.622 0 30.002 13.38 30.002 30v348.74c0 16.622-13.38 30.002-30.002 30.002h-508.17c-16.622 0-30.002-13.38-30.002-30.002v-348.74c0-16.62 13.38-30 30.002-30z"
+	      fill="#d124b1" filter="url(#shadow)"/>
+	<path d="m258.35 73.459c-16.62 0-30 13.38-30 30v433.08c0 16.622 13.38 30.002 30 30.002h763.29c16.622 0 30.002-13.38 30.002-30.002v-433.08c0-16.62-13.38-30-30.002-30zm65.123 21.531h633.04c16.619 0 29.998 13.38 29.998 30v390.03c0 16.619-13.379 29.998-29.998 29.998h-633.04c-16.62 0-30-13.379-30-29.998v-390.03c0-16.62 13.38-30 30-30z"
+	      fill="#c914d8" filter="url(#shadow)"/>
+	<path d="m189.43 50.669c-16.62 0-30 13.38-30 30v478.66c0 16.622 13.38 30.002 30 30.002h901.14c16.622 0 30.002-13.38 30.002-30.002v-478.66c0-16.62-13.38-30-30.002-30zm68.924 22.785h763.29c16.622 0 30.002 13.38 30.002 30v433.08c0 16.622-13.38 30.002-30.002 30.002h-763.29c-16.62 0-30-13.38-30-30.002v-433.08c0-16.62 13.38-30 30-30z"
+	      fill="#b81ee7" filter="url(#shadow)"/>
+	<path d="m114.2 25.801c-16.62 0-30 13.38-30 30v528.4c0 16.619 13.38 29.998 30 29.998h1051.6c16.619 0 29.998-13.379 29.998-29.998v-528.4c0-16.62-13.38-30-29.998-30zm75.232 24.873h901.14c16.622 0 30.002 13.38 30.002 30v478.66c0 16.622-13.38 30.002-30.002 30.002h-901.14c-16.62 0-30-13.38-30-30.002v-478.66c0-16.62 13.38-30 30-30z"
+	      fill="#a430ef" filter="url(#shadow)"/>
+	<path d="m509.14 160.07c-16.11 0-29.079 12.969-29.079 29.079v261.71c0 16.11 12.969 29.079 29.079 29.079h261.71c16.11 0 29.079-12.969 29.079-29.079v-261.71c0-16.11-12.969-29.079-29.079-29.079z"
+	      fill="#333" filter="url(#shadow)"/>
+	<circle cx="640" cy="320" r="100" fill="#fff" filter="url(#shadow)"/>
+	<path d="m640 230a90 90 0 0 0-90 90 90 90 0 0 0 90 90 90 90 0 0 0 90-90 90 90 0 0 0-90-90zm0 15a75 75 0 0 1 75 75 75 75 0 0 1-75 75 75 75 0 0 1-75-75 75 75 0 0 1 75-75z"
+	      fill="#333" filter="url(#shadow)"/>
+	<circle cx="640" cy="320" r="25" fill="#333" filter="url(#shadow)"/>
+</svg>
