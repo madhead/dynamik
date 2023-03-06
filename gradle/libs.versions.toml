@@ -1,17 +1,20 @@
 [versions]
-kotlin = "1.7.20"
-kotlinx-serialization = "1.4.1"
+java = "11"
+kotlin = "1.8.10"
+kotlinx-serialization = "1.5.0"
 awssdk = "2.18.11"
 
-junit = "5.9.1"
+junit = "5.9.2"
 
-jmh = "1.35"
-jmh-plugin = "0.6.8"
+jmh = "1.36"
+jmh-plugin = "0.7.0"
+detekt = "1.22.0"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 jmh = { id = "me.champeau.jmh", version.ref = "jmh-plugin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 
 [libraries]
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }

@@ -1,19 +1,11 @@
 package me.madhead.dynamik
 
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromStream
 import me.madhead.dynamik.types.Order
 import me.madhead.dynamik.types.OrderLineItem
 import me.madhead.dynamik.types.Status
-import me.madhead.dynamik.types.random
-import org.openjdk.jmh.annotations.Benchmark
-import org.openjdk.jmh.annotations.BenchmarkMode
-import org.openjdk.jmh.annotations.Fork
-import org.openjdk.jmh.annotations.Level
-import org.openjdk.jmh.annotations.Mode
-import org.openjdk.jmh.annotations.OutputTimeUnit
-import org.openjdk.jmh.annotations.Scope
-import org.openjdk.jmh.annotations.Setup
-import org.openjdk.jmh.annotations.State
-import org.openjdk.jmh.annotations.Warmup
+import org.openjdk.jmh.annotations.*
 import org.openjdk.jmh.infra.Blackhole
 import software.amazon.awssdk.enhanced.dynamodb.EnhancedType
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema
@@ -77,7 +69,7 @@ open class StaticTableSchemaBenchmark {
 
     @Setup(Level.Iteration)
     fun setupData() {
-        item = Order.random
+        item = Json.decodeFromStream<Order>(this.javaClass.classLoader.getResourceAsStream("order.json")!!)
         map = tableSchema.itemToMap(item, false)
     }
 

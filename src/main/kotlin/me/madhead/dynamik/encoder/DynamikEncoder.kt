@@ -1,60 +1,31 @@
 package me.madhead.dynamik.encoder
 
-import kotlinx.serialization.InternalSerializationApi
-import kotlinx.serialization.SerializationException
-import kotlinx.serialization.SerializationStrategy
-import kotlinx.serialization.descriptors.PrimitiveKind
-import kotlinx.serialization.descriptors.SerialDescriptor
-import kotlinx.serialization.descriptors.SerialKind
-import kotlinx.serialization.descriptors.getContextualDescriptor
 import kotlinx.serialization.encoding.CompositeEncoder
-import kotlinx.serialization.internal.NamedValueEncoder
-import kotlinx.serialization.modules.SerializersModule
+import kotlinx.serialization.encoding.Encoder
 import me.madhead.dynamik.Dynamik
-import software.amazon.awssdk.services.dynamodb.model.AttributeValue
 
-@InternalSerializationApi
-class DynamikEncoder(
-    val dynamik: Dynamik,
-    private val consumer: (Map<String, AttributeValue>) -> Unit
-) : NamedValueEncoder() {
-    override val serializersModule: SerializersModule
-        get() = dynamik.serializersModule
-
-    private var polymorphicDiscriminator: String? = null
-
-    override fun <T> encodeSerializableValue(serializer: SerializationStrategy<T>, value: T) {
-        if (currentTagOrNull == null && serializer.descriptor.carrierDescriptor(serializersModule).requiresTopLevelTag)
-            throw SerializationException("Serializing non-structured data (i.e. primitives) is not supported!")
-        else {
-            encodePolymorphically(serializer, value) { polymorphicDiscriminator = it }
-        }
-    }
-
-    override fun encodeTaggedValue(tag: String, value: Any) {
-        println("$tag: $value")
-    }
-
-    override fun endEncode(descriptor: SerialDescriptor) {
-        consumer(mapOf("TEST" to AttributeValue.builder().s("TEST").build()))
-    }
-
-    override fun beginStructure(descriptor: SerialDescriptor): CompositeEncoder {
-        println("BEGIN STRUCTURE")
-        return super.beginStructure(descriptor)
-    }
-
-    override fun beginCollection(descriptor: SerialDescriptor, collectionSize: Int): CompositeEncoder {
-        println("BEGIN COLLECTION")
-        return super.beginCollection(descriptor, collectionSize)
-    }
+/**
+ * Encoder used by [Dynamik] during serialization.
+ * This interface can be used to inject desired behaviour into a serialization process.
+ *
+ * Typical example of the usage:
+ * ```
+ * object SomeSerializer : KSerializer<SomeClass> {
+ *     override fun serialize(encoder: Encoder, value: SomeClass) {
+ *         if (encoder is DynamikEncoder) {
+ *             // Dynamik-specific logic here
+ *             // E.g. one could access the configuration:
+ *             val configuration = encoder.dynamik.configuration
+ *         } else {
+ *             // Currently serializing the value in some other format
+ *         }
+ *     }
+ * }
+ * ```
+ */
+interface DynamikEncoder : Encoder, CompositeEncoder {
+    /**
+     * An instance of the current [Dynamik].
+     */
+    val dynamik: Dynamik
 }
-
-internal fun SerialDescriptor.carrierDescriptor(module: SerializersModule): SerialDescriptor = when {
-    kind == SerialKind.CONTEXTUAL -> module.getContextualDescriptor(this)?.carrierDescriptor(module) ?: this
-    isInline -> getElementDescriptor(0).carrierDescriptor(module)
-    else -> this
-}
-
-private val SerialDescriptor.requiresTopLevelTag: Boolean
-    get() = kind is PrimitiveKind || kind === SerialKind.ENUM
